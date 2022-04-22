@@ -38,4 +38,32 @@ class KegControl extends React.Component {
     const selectedTap = this.state.mainTapList.filter(keg => keg.id === id)[0];
     this.setState({selectedTap: selectedTap});
   }
+
+  render() {
+    let currentlyVisibleState = null;
+    let buttonText = null;
+    if (this.state.selectedTap !== null) {
+      currentlyVisibleState = 
+      <KegDetail
+        keg = {this.state.selectedTap}/>
+      buttonText = "Return to Tap List";
+    } else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
+      buttonText = "Return to Tap List";
+    } else if (this.state.selectedTap != null) {
+      currentlyVisibleState = <KegDetail keg = {this.state.selectedTap}/>
+      buttonText= "Return to Tap List";
+    } else {
+      currentlyVisibleState = <TapList tapList={this.state.mainTapList} onKegSelection={this.handleChangingSelectedTap} />
+      buttonText = "Add Ticket";
+    }
+    return (
+      <React.Fragment>
+        {currentlyVisibleState}
+        <button onClick={this.handleClick}>{buttonText}</button>
+      </React.Fragment>
+    );
+  }
 }
+
+export default KegControl;
