@@ -10,7 +10,8 @@ class KegControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       mainTapList: [],
-      selectedTap: null
+      selectedTap: null,
+      sell: null
     };
   }
 
@@ -37,6 +38,16 @@ class KegControl extends React.Component {
   handleChangingSelectedTap = (id) => {
     const selectedTap = this.state.mainTapList.filter(keg => keg.id === id)[0];
     this.setState({selectedTap: selectedTap});
+  }
+
+  handleSellClick = () => {
+    this.setState({sell: true});
+  }
+
+  handleSell = () => {
+    this.setState((state, props) => ({
+      sell: this.state.sell + props.increment
+    }));
   }
 
   render() {

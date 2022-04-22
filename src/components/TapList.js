@@ -7,22 +7,24 @@ function TapList(props) {
     <React.Fragment>
       <hr />
       {props.tapList.map((keg) =>
-      <Keg 
-        whenKegClicked = { props.onKegSelection }
-        name={keg.name}
-        brand={keg.brand}
-        price={keg.price}
-        flavor={keg.flavor}
-        id={keg.id}
-        key={keg.id} />
+        <Keg 
+          whenKegClicked = { props.onKegSelection }
+          name={keg.name}
+          brand={keg.brand}
+          price={keg.price}
+          flavor={keg.flavor}
+          pints={keg.pints}
+          id={keg.id}
+          key={keg.id} />
       )}
+      <hr />
     </React.Fragment>
   );
 }
 
 TapList.propTypes = {
   tapList: PropTypes.array,
-  onKegSelection: PropTypes.func
+  onKegSelection: PropTypes.func,
 };
 
 export default TapList
