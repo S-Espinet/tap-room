@@ -1,4 +1,50 @@
-# Getting Started with Create React App
+# Cider\_Source\_Code
+
+#### By _**S-Espinet**_
+
+ ![Component Diagram](/./src/img/TapRoom.drawio.png "Component Diagram")
+
+#### _React application allowing user to add different kegs to a fictional bar and see their details._
+
+## Technologies Used
+
+* _React_
+* _JSX_
+* _VisualStudio Code_
+* _Markdown_
+* _Node Pack Manager_
+* _draw.io_
+* _Git/GitHub_
+
+## Description
+_This is a React application that allows users to create kegs for a fictional cider tap room, and see their details (name, brand, price, and flavor).
+
+## Setup/Installation Requirements
+### Prerequisites (things to have installed):
+* _VisualStudio Code, or preferred code editor_
+* _Node Package Manager_
+
+### Directions:
+* _navigate to github.com/S-Espinet in the browser_
+* _select repository (tap-room)_
+* _click `Code` button and select desired security protocol_
+* _run "git clone" in the terminal into desired directory_
+* _run "npm install --save-exact react-scripts@3.2.0" in the terminal from tap-room directory_
+* _run "npm run start" or "npm start" in the terminal_
+* _respond to prompts in browser as desired_
+
+## Known Bugs
+* _No known bugs at this time_
+
+## License
+_[MIT](https://en.wikipedia.org/wiki/MIT_License)_
+
+Copyright (c) _2022_ _S-Espinet_
+<br>
+<br>
+<br>
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
