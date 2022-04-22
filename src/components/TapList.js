@@ -3,11 +3,19 @@ import Keg from './Keg';
 
 function TapList() {
   return (
-    <Keg 
-    name="London Dry"
-    brand="Schilling Cider"
-    price="8.00"
-    flavor="Apple - Dry"/>
+    <React.Fragment>
+      <hr />
+      {mainTapList.map((keg) =>
+      <Keg 
+        name={keg.name}
+        brand={keg.brand}
+        price={keg.price}
+        flavor={keg.flavor}
+        currentAmount={keg.currentAmount.concat(" pints")}
+        id={keg.id}
+        key={keg.id} />
+      )}
+    </React.Fragment>
   );
 }
 

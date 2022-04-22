@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Ticket() {
+function Keg() {
   return (
     <React.Fragment>
       <h3>{props.name}</h3>
@@ -9,4 +10,12 @@ function Ticket() {
   );
 }
 
-export default Ticket;
+Keg.propTypes = {
+  name: PropTypes.string,
+  brand: PropTypes.string,
+  price: PropTypes.string,
+  flavor: PropTypes.string,
+  currentAmount: PropTypes.number
+}
+
+export default Keg;
