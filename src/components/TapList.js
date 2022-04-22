@@ -11,7 +11,6 @@ function TapList() {
         brand={keg.brand}
         price={keg.price}
         flavor={keg.flavor}
-        currentAmount={keg.currentAmount.concat(" pints")}
         id={keg.id}
         key={keg.id} />
       )}
