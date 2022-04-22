@@ -28,7 +28,7 @@ class KegControl extends React.Component {
   }
 
   handleAddingNewKegToList = (newKeg) => {
-    const newMainTapList = this.state.mainTapList.concat(newTap);
+    const newMainTapList = this.state.mainTapList.concat(newKeg);
     this.setState({
       mainTapList: newMainTapList,
       formVisibleOnPage: false });
@@ -44,8 +44,7 @@ class KegControl extends React.Component {
     let buttonText = null;
     if (this.state.selectedTap !== null) {
       currentlyVisibleState = 
-      <KegDetail
-        keg = {this.state.selectedTap}/>
+      <KegDetail keg = {this.state.selectedTap}/>
       buttonText = "Return to Tap List";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
@@ -55,7 +54,7 @@ class KegControl extends React.Component {
       buttonText= "Return to Tap List";
     } else {
       currentlyVisibleState = <TapList tapList={this.state.mainTapList} onKegSelection={this.handleChangingSelectedTap} />
-      buttonText = "Add Ticket";
+      buttonText = "Add Keg";
     }
     return (
       <React.Fragment>
