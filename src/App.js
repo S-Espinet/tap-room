@@ -4,7 +4,7 @@ import Header from './Header';
 function App() {
   return (
     <React.Fragment>
-      <Header></Header>
+      <Header />
     </React.Fragment>
   );
 }
