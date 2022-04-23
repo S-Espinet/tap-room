@@ -22,6 +22,10 @@ function NewKegForm(props) {
           type='text'
           name='flavor'
           placeholder='Flavor' />
+        <input
+          type='hidden'
+          name='pintsLeft'
+          value='124'/>
         <button type='submit'>Submit</button>
       </form>
     </React.Fragment>
@@ -34,9 +38,14 @@ function NewKegForm(props) {
       brand: event.target.brand.value, 
       price: event.target.price.value, 
       flavor: event.target.flavor.value,
+      pintsLeft: Number(event.target.pintsLeft.value),
       id: v4()
     });
   }
+}
+
+NewKegForm.propTypes = {
+  onNewKegCreation: PropTypes.func
 }
 
 export default NewKegForm;

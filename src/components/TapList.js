@@ -13,11 +13,10 @@ function TapList(props) {
           brand={keg.brand}
           price={keg.price}
           flavor={keg.flavor}
-          pints={keg.pints}
+          pintsLeft={keg.pintsLeft}
           id={keg.id}
           key={keg.id} />
       )}
-      <hr />
     </React.Fragment>
   );
 }

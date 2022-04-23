@@ -10,8 +10,7 @@ class KegControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       mainTapList: [],
-      selectedTap: null,
-      sell: null
+      selectedTap: null
     };
   }
 
@@ -40,14 +39,10 @@ class KegControl extends React.Component {
     this.setState({selectedTap: selectedTap});
   }
 
-  handleSellClick = () => {
-    this.setState({sell: true});
-  }
-
   handleSell = () => {
-    this.setState((state, props) => ({
-      sell: this.state.sell + props.increment
-    }));
+    const selectedTap = this.state.selectedTap
+    selectedTap.pintsLeft -= 1;
+    this.setState({selectedTap: selectedTap});
   }
 
   render() {
@@ -55,14 +50,13 @@ class KegControl extends React.Component {
     let buttonText = null;
     if (this.state.selectedTap !== null) {
       currentlyVisibleState = 
-      <KegDetail keg = {this.state.selectedTap}/>
+      <KegDetail 
+        keg = {this.state.selectedTap}
+        onClickingSell={this.handleSell}/>
       buttonText = "Return to Tap List";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
       buttonText = "Return to Tap List";
-    } else if (this.state.selectedTap != null) {
-      currentlyVisibleState = <KegDetail keg = {this.state.selectedTap}/>
-      buttonText= "Return to Tap List";
     } else {
       currentlyVisibleState = <TapList tapList={this.state.mainTapList} onKegSelection={this.handleChangingSelectedTap} />
       buttonText = "Add Keg";
