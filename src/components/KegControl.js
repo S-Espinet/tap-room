@@ -41,8 +41,10 @@ class KegControl extends React.Component {
 
   handleSell = () => {
     const selectedTap = this.state.selectedTap
-    selectedTap.pintsLeft -= 1;
-    this.setState({selectedTap: selectedTap});
+    if (selectedTap.pintsLeft > 0) {
+      selectedTap.pintsLeft -= 1;
+      this.setState({selectedTap: selectedTap});
+    }
   }
 
   render() {
